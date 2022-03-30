@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mahsulot qo'shish</title>
+</head>
+<body>
+    <h1>Mahsulotning ma'lumotlarini kiriting: </h1>
+    <br>
+    <br>
+    <form action="/user/mahsulot/" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <input name="nom" placeholder="Mahsulot nomi">
+        <br>
+        <input name="narx" placeholder="Mahsulot narxi">
+         <br>
+        <input name="batafsil" placeholder="Batafsil ma'lumot">
+         <br>
+        <input name="aksiya" placeholder="Mahsulot uchun aksiya">
+         <br>
+        <input name="brend" placeholder="Mahsulot brendi">
+         <br>
+        <input name="kafolat" placeholder="Mahsulot kafolati">
+         <br>
+        <input name="yetkazish" placeholder="Mahsulot nomi">
+         <br>
+        <select name="ichki">
+            {% for i in ichkilar %}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+        </select>
+         <br>
+        <input type="file" name="rasm">
+         <br>
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>
