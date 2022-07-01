@@ -4,7 +4,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls')),
+    path('panels/admin/',admin.site.urls),
     path('', include('asosiy.urls')),
     path('user/', include('userapp.urls')),
     path('buyurtma/', include('buyurtma.urls')),
